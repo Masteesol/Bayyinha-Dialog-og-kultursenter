@@ -1,0 +1,53 @@
+@import url("../Bayyinha Dialog og kultursenter/styles/global.css");
+
+
+
+body, nav {
+    background-color: var(--dark-green);
+}
+
+* {
+    color: white;
+}
+
+nav a {
+    color: white!important;
+}
+
+h1 {
+
+    font-size: 50px;
+}
+
+main  {
+    margin: auto;
+    width: 60vw;
+    max-width: 900px;
+    min-width: 600px;
+}
+
+#nav-four, div a:hover {
+    background-color: white;
+    color: var(--dark-green)!important;
+}
+
+div a {
+    color: white;
+}
+
+main p  {
+    margin: 60px 0px 40px 0px;
+}
+
+footer td, footer p, footer h3{
+    color: var(--dark-green)
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        min-width: 80vw;
+    }
+    h1 {
+        font-size: 40px;
+    }
+}

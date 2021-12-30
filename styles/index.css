@@ -1,0 +1,92 @@
+@import url("../Bayyinha Dialog og kultursenter/styles/global.css");
+
+body, nav {
+    background-color: white;
+}
+
+main {
+    height: auto;
+}
+
+h2, .newscard span, .newscard a {
+    font-family: "calibri";
+}
+
+h1 {
+    color: var(--dark-blue);
+    font-size: 40px;
+    margin-bottom: 3vw;
+}
+
+h2 {
+    color: var(--dark-blue);
+    font-size: 30px;
+}
+
+nav div a:hover {
+    color: white;
+}
+
+#nav-one {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+#nav-two:hover {
+    background-color: var(--dark-blue);
+}
+
+#nav-three:hover {
+    background-color: var(--blue-green);
+}
+
+#nav-four:hover {
+    background-color: var(--dark-green);
+}
+
+main  {
+    margin: auto;
+    width: 80vw;
+    max-width: 900px;
+}
+
+.newscard img {
+    width: 100%;
+    height: auto;
+}
+
+.newscard {
+    margin-bottom: 5vw;
+}
+
+.newscard span, .newscard div a {
+    color: gray;
+    font-size: 20px;
+}
+
+.newscard a h2:hover {
+    color: gray;
+}
+
+.newscard div {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer td, footer p, footer h3{
+    color: var(--dark-blue)
+}
+
+@media only screen and (max-width: 600px) {
+   .newscard h2 {
+       font-size: 20px!important;
+   }
+   .newscard span, .newscard div a {
+    font-size: 15px;
+
+    }
+    h1 {
+        font-size: 30px;
+    }
+}

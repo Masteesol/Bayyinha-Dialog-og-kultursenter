@@ -1,0 +1,109 @@
+@import url("../Bayyinha Dialog og kultursenter/styles/global.css");
+
+body, nav {
+    background-color: var(--dark-blue);
+}
+
+
+* {
+    color: white;
+}
+
+nav a {
+    color: white!important;
+}
+
+main  {
+    margin: auto;
+    width: 60vw;
+    max-width: 900px;
+    min-width: 300px;
+}
+
+
+h1 {
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+h1, li {
+    font-family: 'calibri';
+}
+
+
+#nav-two, div a:hover {
+    background-color: white;
+    color: var(--dark-blue)!important;
+}
+
+div a {
+    color: white;
+}
+
+/*show-more buttons*/
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'tahoma', 'calibri';
+    font-weight: 500;
+    font-size: 40px;
+    display: block;
+}
+
+/*arrow icon*/
+.container button span, .container-active button span {
+    background-image: url("../icons/chevron-right-solid.svg");
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    filter: invert(99%) sepia(10%) saturate(124%) hue-rotate(186deg) brightness(118%) contrast(100%);
+    display: inline-block;
+    cursor: pointer;   
+}
+
+/*arrow when clicked*/
+.container-active span {
+    transform: rotate(90deg) translateX(10px);
+}
+
+.container-active div {
+    display: inline-block;
+}
+
+.container div {
+    display: none;
+}
+
+.container div, .container-active div {
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+
+.container, .container-active {
+    margin-bottom: 60px;
+
+}
+
+li {
+    font-size: 30px;
+}
+
+footer td, footer p, footer h3{
+    color: var(--dark-blue)
+}
+
+@media only screen and (max-width: 900px) {
+    button {
+        font-size: 30px;
+    }
+    button span {
+        height: 20px!important;
+        width: 20px!important;
+    }
+
+    li {
+        font-size: 20px;
+    }
+}
