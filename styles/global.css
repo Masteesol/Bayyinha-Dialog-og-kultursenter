@@ -4,8 +4,7 @@
     --blue-green: #4D829E;
     --footer: #d4d4d4;
 }
-
-body, html {
+body {
     margin: 0px;
     height: 100vh;
     overflow-y: scroll;
@@ -22,15 +21,15 @@ body {
     100%{opacity: 1;}
 }
 
- /* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar, html::-webkit-scrollbar {
+
+body::-webkit-scrollbar, .load-document::-webkit-scrollbar {
     display: none;
   }
   
-  /* Hide scrollbar for IE, Edge and Firefox */
-body, html {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+
+body, .load-document {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
   } 
 main {
     height: 100vh;

@@ -1,6 +1,8 @@
 const body = document.querySelector('body');
+const html = document.querySelector('html');
 
 function loadLogo () {
+    html.classList.add("load-document")
     body.innerHTML = `<main>
                         <img src="logo/logo\ full.png">
                     </main>`;
