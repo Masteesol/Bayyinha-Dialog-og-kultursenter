@@ -21,7 +21,7 @@ header {
 .header-text {
     font-size: 50px;
     font-family: 'Microsoft Himalaya';
-    font-weight: 200;
+    font-weight: 300;
     position: absolute;
     top: 20vh;
     right: 20px;
@@ -110,7 +110,7 @@ footer td, footer p, footer h3{
         height: 60vh;
     }
     .header-text {
-        font-size: 40px;
+        font-size: 30px;
     }
     
 }
