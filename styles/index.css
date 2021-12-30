@@ -110,6 +110,7 @@ footer td, footer p, footer h3{
         height: 60vh;
     }
     .header-text {
+        top: 10vh;
         font-size: 30px;
     }
     
