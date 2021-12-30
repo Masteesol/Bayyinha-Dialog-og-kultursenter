@@ -18,6 +18,15 @@ header {
     background-position-y: center;
 }
 
+.header-text {
+    font-size: 50px;
+    font-family: 'Microsoft Himalaya';
+    position: absolute;
+    top: 20vh;
+    right: 20px;
+    color: white;
+}
+
 h1 {
     color: var(--dark-blue);
     font-size: 40px;
