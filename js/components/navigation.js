@@ -21,7 +21,7 @@ footer.innerHTML = `<div class="contact-info">
                         <div class="org-details">
                             <p>Bayyinah dialog og kultursenter. </p><p>Organisasjonsnummer 925 000 507. </p><p>Copyright 2022.</p>
                         </div>
-                        <div>
+                        <div class="footer-utvikler">
                             <p>Nettsiden er utviklet av Marius Solheim</p>
                             <p>E-post: masteesol@gmail.com</p>
                         </div>`;
