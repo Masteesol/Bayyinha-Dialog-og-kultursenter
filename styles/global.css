@@ -180,7 +180,7 @@ footer >*{
 }
 
 .social-media div {
-    display: flex;
+    flex-direction: row;
     justify-content: center;
 }
 
@@ -196,9 +196,20 @@ footer >*{
     border: 2px solid white;
 }
 
-/*footer div:nth-child(2) {
-    margin-top: 3vw;
-}*/
+footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.org-details >* {
+    display: inline;
+}
+
+.org-details {
+    display: block;
+}
 
 footer {
     background-color: var(--footer);
@@ -206,20 +217,24 @@ footer {
 
 
 @media only screen and (max-width: 700px) {
+    .header-logo {
+        position: absolute;
+    }
 
     p, td {
         font-size:  15px!important;
     }
-    footer p {
-        max-width: 80vw;
-    }
+    
     .nav-desktop {
         display: none;
     }
     .nav-mobile {
         display: flex!important;
     }
-    
+    /*Footer scaling*/
+    footer p {
+        max-width: 80vw;
+    }
     footer {
         margin-top: 20vh!important;
     }
@@ -230,8 +245,10 @@ footer {
     .sosiale-medier h3 {
         font-size: 18px;
     }
-    .header-logo {
-        position: absolute;
+    .org-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
 }

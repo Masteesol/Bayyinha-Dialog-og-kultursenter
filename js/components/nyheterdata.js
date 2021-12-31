@@ -48,7 +48,6 @@ function htmlNewsFeed (articleData) {
                     </a>
                     <div>
                         <span>Dato publisert: ${articleData.datePublished}</span>
-                        <a href="details.html?id=${articleData.id}">Les mer</a>
                 </div>
             </div>`;
 }
@@ -56,8 +55,8 @@ function htmlNewsFeed (articleData) {
 function htmlNewsDetails(articleData) {
     return `<div class="image-container"><img src=${articleData.image} alt="nyheter bilde"></div>
             <div class="description-container">
-                <span>Dato publisert: ${articleData.datePublished}</span>
                 <span>Bilde: ${articleData.imageDescription}</span>
+                <span>Dato publisert: ${articleData.datePublished}</span>
             </div>
             <div class="text-container">
                 <h1>${articleData.title}</h1>
