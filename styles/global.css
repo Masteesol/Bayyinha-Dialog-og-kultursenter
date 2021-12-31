@@ -210,6 +210,9 @@ footer {
     p, td {
         font-size:  15px!important;
     }
+    footer p {
+        max-width: 80vw;
+    }
     .nav-desktop {
         display: none;
     }
@@ -219,7 +222,6 @@ footer {
     
     footer {
         margin-top: 20vh!important;
-        margin-bottom: 50px;
     }
 
     footer td, footer p{

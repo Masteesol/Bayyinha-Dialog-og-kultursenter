@@ -43,6 +43,10 @@ p, span {
 @media only screen and (max-width: 600px) {
     h1 {
         font-size: 20px!important;
+        margin-bottom: 6vh!important;
+    }
+    header {
+        height: 14vh!important;
     }
     .text-container {
         min-width: 100%;

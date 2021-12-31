@@ -31,7 +31,7 @@ h2, .newscard span, .newscard a {
 h1 {
     color: var(--dark-blue);
     font-size: 40px;
-    margin-bottom: 5vw;
+    margin-bottom: 10vh;
 }
 
 h2 {
@@ -71,8 +71,12 @@ main  {
     height: auto;
 }
 
-.newscard {
+.newscard h2 {
     margin-bottom: 5vw;
+}
+
+.newscard {
+    margin-bottom: 10vh;
 }
 
 .newscard span, .newscard div a {

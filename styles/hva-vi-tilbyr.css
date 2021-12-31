@@ -160,10 +160,10 @@ footer td, footer p, footer h3{
     }
     header {
         height: 100vh;
-        background-size: 110%;
+        background-size: 120%;
     }
     h1 {
-        font-size: 35px;
+        font-size: 30px;
     }
     #tilbud-two {
         height: auto;
