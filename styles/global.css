@@ -230,5 +230,8 @@ footer {
     .sosiale-medier h3 {
         font-size: 18px;
     }
+    .header-logo {
+        position: absolute;
+    }
     
 }
