@@ -12,7 +12,7 @@ h2, .newscard span, .newscard a {
     font-family: "calibri";
 }
 
-header {
+.header-nyheter {
     background-image: url("/images/stock-photos/pexels-andres-ayrton-6551313.jpg");
     height: 60vh;
     background-position-y: center;

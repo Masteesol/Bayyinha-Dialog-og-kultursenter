@@ -1,9 +1,21 @@
 @import url("../Bayyinha Dialog og kultursenter/styles/global.css");
 
-body, nav {
+nav {
     background-color: var(--dark-blue);
 }
 
+body {
+    background-color: #faebd7;
+}
+
+header {
+    background-image: url("/images/stock-photos/pexels-cottonbro-4065895.jpg");
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 10vh;
+}
 
 * {
     color: white;
@@ -14,16 +26,21 @@ nav a {
 }
 
 main  {
+    height: fit-content;
+    min-height: 100vh;
     margin: auto;
-    width: 60vw;
-    max-width: 900px;
+    width: 90vw;
+    max-width: 1300px;
     min-width: 300px;
 }
 
 
 h1 {
+    font-size: 50px;
+    position: absolute;
     font-weight: 300;
-    margin-bottom: 50px;
+    top: 60vh;
+    right: 45vw;
 }
 
 h1, li {
@@ -49,6 +66,7 @@ button {
     font-weight: 500;
     font-size: 40px;
     display: block;
+    color: #525252
 }
 
 /*arrow icon*/
@@ -57,14 +75,19 @@ button {
     height: 30px;
     width: 30px;
     background-repeat: no-repeat;
-    filter: invert(99%) sepia(10%) saturate(124%) hue-rotate(186deg) brightness(118%) contrast(100%);
+    filter: invert(24%) sepia(17%) saturate(0%) hue-rotate(161deg) brightness(100%) contrast(72%);
     display: inline-block;
     cursor: pointer;   
 }
 
 /*arrow when clicked*/
 .container-active span {
+    filter: invert(99%) sepia(10%) saturate(124%) hue-rotate(186deg) brightness(118%) contrast(100%)!important;
     transform: rotate(90deg) translateX(10px);
+}
+
+.container-active button {
+    color: white!important;
 }
 
 .container-active div {
@@ -80,10 +103,35 @@ button {
     overflow: hidden;
 }
 
+.container-active {
+    height: 80vh;
+    width: 100%;
+    background-repeat: no-repeat;
+}
 
 .container, .container-active {
     margin-bottom: 60px;
+}
 
+#tilbud-one{
+    background-image: url("/images/stock-photos/pexels-edmond-dantès-8556681.jpg");
+    background-position: 20%;
+
+}
+
+#tilbud-two{
+    background-size: 100%;
+    background-image: url("/images/stock-photos/pexels-tima-miroshnichenko-5439157.jpg");
+}
+
+#tilbud-three{
+    background-image: url("/images/stock-photos/pexels-andrea-piacquadio-3830752.jpg");
+    background-position: 70%;
+    background-size: 100%;
+}
+
+.container {
+    background-image: none!important;
 }
 
 li {
@@ -97,6 +145,7 @@ footer td, footer p, footer h3{
 @media only screen and (max-width: 900px) {
     button {
         font-size: 30px;
+        padding-left: 50px;
     }
     button span {
         height: 20px!important;
@@ -105,5 +154,18 @@ footer td, footer p, footer h3{
 
     li {
         font-size: 20px;
+    }
+    main {
+        min-width: 100vw;
+    }
+    header {
+        height: 100vh;
+        background-size: 110%;
+    }
+    h1 {
+        font-size: 35px;
+    }
+    #tilbud-two {
+        height: auto;
     }
 }
