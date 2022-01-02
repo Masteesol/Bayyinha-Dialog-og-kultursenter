@@ -73,4 +73,7 @@ footer td, footer p, footer h3{
     main {
         min-width: 80vw!important;
     }
+    header {
+        height: 10vh;
+    }
 }
