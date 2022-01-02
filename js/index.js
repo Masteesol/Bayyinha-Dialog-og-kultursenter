@@ -3,7 +3,10 @@ const main = document.querySelector('main');
 insertHTML()
 
 function insertHTML () {
-    nyheter.forEach(function(item) {
-        main.innerHTML += htmlNewsFeed(item);
-    })
+    for(let i = 0; i < nyheter.length; i++) {
+        if (i === 4) {
+            break;
+        }
+        main.innerHTML += htmlNewsFeed(nyheter[i]);
+    }
 }

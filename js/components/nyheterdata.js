@@ -26,7 +26,7 @@ const nyheter = [
         dette skal ikke hindre barna i å få opplæring i svømming. Denne støtten har vi fått 
         sponset av fylkesmann i Oslo og Viken. Mer oppdatering kommer etter gjennomføring av 
         aktiviteten `,
-    }
+    }, 
 ];
 
 
@@ -35,6 +35,7 @@ const nyheter = [
         id: "",
         title: ``,
         image: "images/nyheter/...",
+        imageDescription: "",
         datePublished: "",
         fullText: ``
     }
