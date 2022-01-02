@@ -66,6 +66,29 @@ main  {
     max-width: 900px;
 }
 
+.news-buttons {
+    height: 50px;
+    width: auto;
+}
+
+#active, #active-news, .news-buttons a:hover {
+    color: var(--blue-green);
+    background-color: white;
+    
+}
+
+.news-buttons a {
+    font-family: "calibri";
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+    border: solid 2px var(--blue-green);
+    background-color: var(--blue-green);
+    color: white;
+    font-size: 20px;
+}
+
+
+
 .newscard img {
     width: 100%;
     height: auto;
@@ -98,6 +121,10 @@ footer td, footer p, footer h3{
     color: var(--dark-blue)
 }
 
+.arkiv-card p {
+    color: gray;
+}
+
 @media only screen and (max-width: 600px) {
    .newscard h2 {
        font-size: 20px!important;
@@ -116,6 +143,17 @@ footer td, footer p, footer h3{
     .header-text {
         top: 10vh;
         font-size: 25px;
+    }
+    .news-buttons a {
+        font-size: 15px;
+        padding: 5px 10px 5px 10px;
+        border: solid 2px var(--blue-green);
+    }
+    .arkiv-card h2 {
+        font-size: 15px;
+    }
+    .arkiv-card p {
+        font-size: 12px!important;
     }
     
 }
