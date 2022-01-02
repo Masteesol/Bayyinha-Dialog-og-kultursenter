@@ -124,6 +124,9 @@ footer td, footer p, footer h3{
 .arkiv-card p {
     color: gray;
 }
+.body-arkiv main{
+    min-height: 100vh;
+}
 
 @media only screen and (max-width: 600px) {
    .newscard h2 {
@@ -157,9 +160,6 @@ footer td, footer p, footer h3{
     }
     .body-arkiv header {
         height: 10vh;
-    }
-    .body-arkiv main{
-        min-height: 100vh;
     }
     
 }
