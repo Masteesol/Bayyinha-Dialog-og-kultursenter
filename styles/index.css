@@ -155,5 +155,11 @@ footer td, footer p, footer h3{
     .arkiv-card p {
         font-size: 12px!important;
     }
+    .body-arkiv header {
+        height: 10vh;
+    }
+    .body-arkiv main{
+        min-height: 100vh;
+    }
     
 }
