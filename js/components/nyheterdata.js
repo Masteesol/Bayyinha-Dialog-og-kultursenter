@@ -3,8 +3,18 @@ const nyheter = [
         id: "news1",
         title: `Integreringsarbeid i regi av frivillige organisasjoner <br>
         <strong>– Ett skritt nærmere drømmejobben</strong>`,
-        image: "images/nyheter/news_29.12.21.png",
+        image: "images/nyheter/news1_29.12.21/news_29.12.21.png",
         imageDescription: "fra seminaret",
+        imageReel: [
+            {
+                image: "images/nyheter/news1_29.12.21/image_reel/image1.jpg",
+                imageDescription: "Muhammed Abdelqadir snakker om jobbmarkedet i Norge"
+            },
+            {
+                image: "images/nyheter/news1_29.12.21/image_reel/image2.jpg",
+                imageDescription: "Buffet!"
+            }
+        ],
         datePublished: "15.12.21",
         fullText: `Bayyinah har søkt tilskudd fra Oslo kommune for å 
         gjennomføre dette prosjektet: øke kunnskap om det norske samfunnet 
@@ -18,8 +28,9 @@ const nyheter = [
     {   
         id: "news2",
         title: `Vi har søkt tilskudd til svømming for barnehage barn.`,
-        image: "images/nyheter/news_28.12.21.png",
+        image: "images/nyheter/news2_28.12.21/news_28.12.21.png",
         imageDescription: "signert dokument",
+        imageReel: [],
         datePublished: "16.12.21",
         fullText: `Vi har søkt tilskudd til svømming for barnehage barn og dette har vi fått innvilget. 
         Dette skal gjennomføres i 2021 fra og med januar. I håp om at alt ting som planlagt og at 
@@ -36,6 +47,7 @@ const nyheter = [
         title: ``,
         image: "images/nyheter/...",
         imageDescription: "",
+        imageReel: [],
         datePublished: "",
         fullText: ``
     }
