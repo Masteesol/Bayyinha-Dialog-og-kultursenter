@@ -52,16 +52,14 @@ if(fullArticle.imageReel.length > 0) {
                 if(currentPos > 1) {
                         currentPos--;
                         const previousImage = document.querySelector(`#image${currentPos}`);
-                        previousImage.scrollIntoView({behavior: "smooth"})
-                        console.log(currentPos)
+                        previousImage.scrollIntoView({behavior: "auto"})
                 }
         })
         buttonRight.addEventListener("click", function() {
                 if(currentPos < fullArticle.imageReel.length) {
                         currentPos++;
                         const nextImage = document.querySelector(`#image${currentPos}`);
-                        nextImage.scrollIntoView({behavior: "smooth"})
-                        console.log(currentPos)
+                        nextImage.scrollIntoView({behavior: "auto"})
                 }
         })
 }
