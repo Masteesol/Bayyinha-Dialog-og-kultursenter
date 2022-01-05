@@ -12,6 +12,15 @@ insertHTML()
 
 function insertHTML () {
         main.innerHTML = htmlNewsDetails(fullArticle);
+        if(fullArticle.videos.length > 0) {
+            fullArticle.videos.forEach(function(item) {
+                main.innerHTML += `<article class="text-container" id="video-text">${item.text}</article>`;
+                main.innerHTML += createVideoHTML(item)
+                
+                
+            })
+            
+        }
         if(fullArticle.imageReel.length > 0) {
                 main.append(imageReelHTML())
         }
@@ -64,50 +73,11 @@ if(fullArticle.imageReel.length > 0) {
         })
 }
 
-
-
-/*
-function hideOrRevealBtn (id, action) {
-        const tempBtn = document.querySelector(`${id}`)
-        if (action == "hide") {
-            tempBtn.style.backgroundImage = "none";
-            tempBtn.style.cursor = "auto"
-        }
-        else {
-            tempBtn.removeAttribute("style")
-        }
-    }
-    
-    hideOrRevealBtn("#button-left", "hide")
-    
-    mainContainer.addEventListener("click", function(e){
-        const targetID = e.target.id
-        const scrollToObj = document.querySelector(".portfolio-images");
-        
-        if(targetID.includes("right")){
-            if (currentPos >= portfolioImages.length) {
-                currentPos = portfolioImages.length;
-            } else {
-                currentPos += 1;
-                hideOrRevealBtn("#button-left", "reveal")
-                const scrollToElm = document.querySelector("#pos-"+ currentPos.toString());
-                scrollToElm.scrollIntoView({behavior: "smooth"})
-                if(currentPos === portfolioImages.length) {
-                   hideOrRevealBtn("#button-right", "hide")
-                    }
-                }
-            }
-        if(targetID.includes("left")){
-            if (currentPos <= 1) {
-                currentPos = 1;
-            } else {
-                currentPos -= 1;
-                hideOrRevealBtn("#button-right", "reveal")
-                const scrollToElm = document.querySelector("#pos-"+currentPos.toString());
-                scrollToElm.scrollIntoView({behavior: "smooth"})
-                if(currentPos === 1) {
-                    scrollToObj.scrollTo(0, {behavior: "smooth"})
-                    hideOrRevealBtn("#button-left", "hide")
-                    }
-                }
-            }*/
+function createVideoHTML (video) {
+    return `<div class="video-container"> <video width="320" height="240" controls>
+                <source src="${video.source}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="text-container">${video.description}</p>
+            </div>`;
+}

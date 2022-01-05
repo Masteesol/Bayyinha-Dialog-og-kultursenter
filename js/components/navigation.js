@@ -14,8 +14,8 @@ footer.innerHTML = `<div class="contact-info">
                         <div class="social-media">
                             <h3>Følg oss på sosiale medier!</h3>
                             <div>
-                                <a href=""><img src="icons/instagram.png" alt="" class="instagram"></a>
-                                <a href=""><img src="icons/facebook.png" alt="" class="instagram"></a>
+                                <a href="https://instagram.com/bdksenter20"><img src="icons/instagram.png" alt="instagram-link" class="instagram"></a>
+                                <a href="https://www.facebook.com/BDKsenter20"><img src="icons/facebook.png" alt="facebook-link" class="instagram"></a>
                             </div>   
                         </div>
                         <div class="org-details">

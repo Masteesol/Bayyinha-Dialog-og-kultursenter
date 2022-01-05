@@ -15,10 +15,20 @@ const nyheter = [
                 imageDescription: "Buffet!"
             }
         ],
+        videos: [ {
+            source: "images/nyheter/news1_29.12.21/videos/video1.mp4",
+            description: "Video: Muhammed Abdelqadir snakker om jobbmarkedet i Norge",
+            text: `<h4>Slik fungerer jobbmarkedet i Norge</h4><br><br><p>Mohammed Abdelqadir er topputdannet i Finans fra BI: 
+            "Jeg tok kurs fra NAV, for å bygge min CV og søknad, og ikke minst hvordan man bygger nettverk". 
+             Se intervjuet for å finne ut mer hvilken steg Mohammed har tatt for å lykkes med drømmejobben.<br>
+            <i>Språk: Somali</i></p>`,
+        }
+            
+        ],
         datePublished: "15.12.21",
         fullText: `Bayyinah har søkt tilskudd fra Oslo kommune for å 
         gjennomføre dette prosjektet: øke kunnskap om det norske samfunnet 
-        og styrket kvalifisering for arbeid eller utdanning blant innvandrer. 
+        og styrket kvalifisering for arbeid eller utdanning blant innvandrere. 
         I samarbeid med Norsom TV, har vi produsert tre serier hvor vi har filmet 
         personer fra forskjellige bakgrunn. Filmene har blitt lagt ut på Facebook og 
         Instagram sidene.<br><br> Bayyinah har avsluttet med et seminar som ble holdt den 
@@ -31,6 +41,7 @@ const nyheter = [
         image: "images/nyheter/news2_28.12.21/news_28.12.21.png",
         imageDescription: "signert dokument",
         imageReel: [],
+        videos: [],
         datePublished: "16.12.21",
         fullText: `Vi har søkt tilskudd til svømming for barnehage barn og dette har vi fått innvilget. 
         Dette skal gjennomføres i 2021 fra og med januar. I håp om at alt ting som planlagt og at 
@@ -48,8 +59,21 @@ const nyheter = [
         image: "images/nyheter/...",
         imageDescription: "",
         imageReel: [],
+        videos: [],
         datePublished: "",
         fullText: ``
+    }
+    imageReel objects: 
+        {
+        image: "images/nyheter/news1_29.12.21/image_reel/image1.jpg",
+        imageDescription: "Muhammed Abdelqadir snakker om jobbmarkedet i Norge"
+    }
+
+    }
+    videos objects: 
+        {
+        video: "images/nyheter/news1_29.12.21/image_reel/image1.jpg",
+        videoDescription: "Muhammed Abdelqadir snakker om jobbmarkedet i Norge"
     }
 */ 
 

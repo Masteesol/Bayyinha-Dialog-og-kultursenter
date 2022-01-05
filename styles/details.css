@@ -1,6 +1,6 @@
 @import url("../Bayyinha Dialog og kultursenter/styles/global.css");
 
-h1 {
+h1, h4 {
     font-family: "verdana", "calibri";
 }
 
@@ -33,12 +33,46 @@ h1 {
 }
 
 img {
-    width: 100%
+    width: 100%;
 }
 
 p, span {
     color: rgb(59, 59, 59);
 }
+
+h4 {
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--dark-blue)
+}
+
+/*Video styling*/
+
+.video-container {
+    margin: 5vh 0vh 5vh 0vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-container p {
+    text-align: center;
+    color: rgb(134, 134, 134);
+}
+
+video {
+    width: 50%;
+    min-width: 600px;
+    height: auto;
+}
+
+#video-text {
+    margin-top: 10vh;
+}
+
+
 /*Image reel styling*/
 
 h3 {
@@ -183,5 +217,9 @@ button:hover {
     }
     .main-reel-container i {
         display: flex;
+    }
+    video {
+        width: 100%;
+        min-width: 100%;
     }
  }
