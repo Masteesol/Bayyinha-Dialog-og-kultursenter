@@ -1,5 +1,35 @@
 const nyheter = [
     {   
+        id: "news3",
+        title: `Videoserie: "Hvordan fungerer arbeidsmarkedet i Norge?"`,
+        image: "images/nyheter/news3_07.01.22/main-image.png",
+        imageDescription: "Fadumo Farah, Muhammed Abdelqadir, Abdibasid Ali",
+        imageReel: [],
+        videos: [{
+            source: "images/nyheter/news3_07.01.22/videos/video1.mp4",
+            description: "Video: Muhammed Abdelqadir snakker om jobbmarkedet i Norge",
+            text: `<h4>Slik fungerer jobbmarkedet i Norge</h4><br><br><p>Mohammed Abdelqadir er topputdannet i Finans fra BI: 
+            "Jeg tok kurs fra NAV, for å bygge min CV og søknad, og ikke minst hvordan man bygger nettverk". 
+             Se intervjuet for å finne ut mer hvilken steg Mohammed har tatt for å lykkes med drømmejobben.<br>
+            <i>Språk: Somali</i></p>`,
+        }, 
+        {
+            source: "images/nyheter/news3_07.01.22/videos/video3.mp4",
+            description: "Video: Fadumo Farah",
+            text: `<h4>Ikke gi opp, vis barna dine at du jobber for dem, du er et forbilde!</h4><br><br>
+            <p>Fadumo Farah jobber som bussjåfør og vi får endelig høre hennes erfaring om arbeidsmarkedet i 
+            Norge og hvilken råd hun ønsker å gi til alle kvinner som ønsker å komme i arbeid.</p>`,
+        },
+        {
+            source: "images/nyheter/news3_07.01.22/videos/video2.mp4",
+            description: "Video: Abdibasid Ali deler med oss sin erfaring, samt råd og tips.",
+            text: ``,
+        }],
+        datePublished: "07.01.22",
+        fullText: `I samarbeid med Norsom TV, har vi produsert tre serier hvor vi har filmet personer 
+        fra forskjellige bakgrunn. Filmene har blitt lagt ut på Facebook og Instagram sidene.`
+    }, 
+    {   
         id: "news1",
         title: `Integreringsarbeid i regi av frivillige organisasjoner <br>
         <strong>– Ett skritt nærmere drømmejobben</strong>`,
@@ -15,27 +45,7 @@ const nyheter = [
                 imageDescription: "Buffet!"
             }
         ],
-        videos: [ {
-            source: "images/nyheter/news1_29.12.21/videos/video1.mp4",
-            description: "Video: Muhammed Abdelqadir snakker om jobbmarkedet i Norge",
-            text: `<h4>Slik fungerer jobbmarkedet i Norge</h4><br><br><p>Mohammed Abdelqadir er topputdannet i Finans fra BI: 
-            "Jeg tok kurs fra NAV, for å bygge min CV og søknad, og ikke minst hvordan man bygger nettverk". 
-             Se intervjuet for å finne ut mer hvilken steg Mohammed har tatt for å lykkes med drømmejobben.<br>
-            <i>Språk: Somali</i></p>`,
-        }, 
-        ,
-        {
-            source: "images/nyheter/news1_29.12.21/videos/video3.mp4",
-            description: "Video: Fadumo Farah",
-            text: `<h4>Ikke gi opp, vis barna dine at du jobber for dem, du er et forbilde!</h4><br><br>
-            <p>Fadumo Farah jobber som bussjåfør og vi får endelig høre hennes erfaring om arbeidsmarkedet i 
-            Norge og hvilken råd hun ønsker å gi til alle kvinner som ønsker å komme i arbeid.</p>`,
-        },
-        {
-            source: "images/nyheter/news1_29.12.21/videos/video2.mp4",
-            description: "Video: Abdibasid Ali deler med oss sin erfaring, samt råd og tips.",
-            text: ``,
-        }
+        videos: [ 
         ],
         datePublished: "07.01.22",
         fullText: `Bayyinah har søkt tilskudd fra Oslo kommune for å 
