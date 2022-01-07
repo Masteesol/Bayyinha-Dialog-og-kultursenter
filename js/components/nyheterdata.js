@@ -37,7 +37,7 @@ const nyheter = [
             text: ``,
         }
         ],
-        datePublished: "15.12.21",
+        datePublished: "07.01.22",
         fullText: `Bayyinah har søkt tilskudd fra Oslo kommune for å 
         gjennomføre dette prosjektet: øke kunnskap om det norske samfunnet 
         og styrket kvalifisering for arbeid eller utdanning blant innvandrere. 
@@ -54,7 +54,7 @@ const nyheter = [
         imageDescription: "signert dokument",
         imageReel: [],
         videos: [],
-        datePublished: "16.12.21",
+        datePublished: "07.01.22",
         fullText: `Vi har søkt tilskudd til svømming for barnehage barn og dette har vi fått innvilget. 
         Dette skal gjennomføres i 2021 fra og med januar. I håp om at alt ting som planlagt og at 
         dette skal ikke hindre barna i å få opplæring i svømming. Denne støtten har vi fått 
