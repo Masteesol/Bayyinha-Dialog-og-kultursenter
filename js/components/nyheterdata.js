@@ -22,6 +22,10 @@ const nyheter = [
             "Jeg tok kurs fra NAV, for å bygge min CV og søknad, og ikke minst hvordan man bygger nettverk". 
              Se intervjuet for å finne ut mer hvilken steg Mohammed har tatt for å lykkes med drømmejobben.<br>
             <i>Språk: Somali</i></p>`,
+        }, {
+            source: "images/nyheter/news1_29.12.21/videos/video2.mp4",
+            description: "Video: Abdibasid Ali deler med oss sin erfaring, samt råd og tips.",
+            text: ``,
         }
             
         ],
@@ -72,9 +76,10 @@ const nyheter = [
     }
     videos objects: 
         {
-        video: "images/nyheter/news1_29.12.21/image_reel/image1.jpg",
-        videoDescription: "Muhammed Abdelqadir snakker om jobbmarkedet i Norge"
-    }
+            source: "images/nyheter/news1_29.12.21/videos/video1.mp4",
+            description: "",
+            text: ``,
+        }
 */ 
 
 function htmlNewsFeed (articleData) {
