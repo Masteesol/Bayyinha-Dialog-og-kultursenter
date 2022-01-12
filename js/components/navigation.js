@@ -9,7 +9,7 @@ mainLogo.addEventListener("click", function() {
 
 footer.innerHTML = `<div class="contact-info">
                         <p>E-post: bdksenter2020@gmail.com</p>
-                        <p>Telefon: 00000000</p>
+                        <p>Telefon: 484 29 079</p>
                     </div>
                         <div class="social-media">
                             <h3>Følg oss på sosiale medier!</h3>
