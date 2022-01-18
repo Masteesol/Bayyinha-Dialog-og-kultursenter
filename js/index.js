@@ -1,12 +1,26 @@
 const main = document.querySelector('main');
 
-insertHTML()
+async function newArrayObject(post) {
+    const newImage = await getMainImage(post._links["wp:featuredmedia"][0].href)
 
-function insertHTML () {
-    for(let i = 0; i < nyheter.length; i++) {
-        if (i === 4) {
-            break;
-        }
-        main.innerHTML += htmlNewsFeed(nyheter[i]);
+    const newObject =  {   
+        id: String(post.id),
+        title: post.title.rendered,
+        image: newImage.source,
+        imageDescription: newImage.caption,
+        datePublished: reformatDate(post.date),
+    }
+    //console.log(newObject);
+    return await newObject;
+}
+
+async function insertHTML () {
+    const newArray = await arrayFromAPI()
+    //console.log("newArray = ", newArray);
+    for await (const item of newArray) {
+        main.innerHTML += htmlNewsFeed(item);
     }
 }
+
+insertHTML()
+
