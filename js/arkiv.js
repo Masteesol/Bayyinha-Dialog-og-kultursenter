@@ -20,3 +20,4 @@ async function insertHTML() {
         console.log(`Error message is: ${error}`);
     }
 }
+
