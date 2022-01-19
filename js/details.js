@@ -23,7 +23,7 @@ insertHTML()
 
 async function insertHTML () {
         const fullArticle = await objectFromAPI()
-        console.log("test details", fullArticle);
+        //console.log("test details", fullArticle);
         main.innerHTML = htmlNewsDetails(fullArticle);
         if(fullArticle.videos.length > 0) {
                 for await (const item of fullArticle.videos) {
@@ -44,8 +44,7 @@ async function insertHTML () {
 let currentPos = 1;
 
 function imageReelHTML (fullArticle) {
-        console.log("imagereel full", fullArticle);
-        //const fullArticle = await objectFromAPI()
+        //console.log("imagereel full", fullArticle);
         const mainContainer = document.createElement("div");
         const reelContainer = document.createElement("div");
         mainContainer.classList.add("main-reel-container")
@@ -135,7 +134,7 @@ async function findHTMLNodeInString(string, nodeClassName) {
         let contentHTML = document.createElement("div")
         contentHTML.innerHTML = `${string}`;
         const contentHTMLNodes = contentHTML.childNodes
-        console.log("content of nodes",contentHTMLNodes);
+        //console.log("content of nodes",contentHTMLNodes);
     
         async function findImageFromWP(className) {
                 let array = []
@@ -160,8 +159,8 @@ async function findHTMLNodeInString(string, nodeClassName) {
         async function findVideoFromWP(urlName, caption) {
                 const mediaLibrary = await fetch(mediaURL)
                 const JSON = await mediaLibrary.json()
-                console.log("JSON MEDIA",JSON);
-                console.log("Passed URL",urlName);
+                //console.log("JSON MEDIA",JSON);
+                //console.log("Passed URL",urlName);
                 //We want the videofilename without the file extention
         
                 let object
@@ -170,10 +169,10 @@ async function findHTMLNodeInString(string, nodeClassName) {
                                 let convertToHTML = document.createElement("div")
                                 convertToHTML.innerHTML = `${item.description.rendered}`;
                                 const contentHTMLNodes = convertToHTML.childNodes
-                                console.log("MEDIANODES", contentHTMLNodes);
+                                //console.log("MEDIANODES", contentHTMLNodes);
                                 let heading = item.caption.rendered;
                                 heading = heading.substring(3, heading.length-5)
-                                console.log("heading", heading);
+                                
                                 object = {
                                         heading: heading,
                                         description: caption,
@@ -193,13 +192,11 @@ async function findHTMLNodeInString(string, nodeClassName) {
                         }
                 })
                 if(hasVideo) {
-                        console.log("hasVideo");
                         for await (const item of contentHTMLNodes) {
                                 if(item.className && item.className.includes("wp-block-video")) {
                                         const url = item.firstChild.src
                                         const caption = item.innerText;
                                         const newObject = await findVideoFromWP(url, caption)
-                                        console.log("object", newObject);
                                         arrayOfNodes.push(newObject) 
                                 }
                         }
@@ -214,11 +211,9 @@ async function findHTMLNodeInString(string, nodeClassName) {
                         }
                 })
                 if(hasImages) {
-                        console.log("hasimage");
                         arrayOfNodes.push(await findImageFromWP("wp-block-image"))
                         arrayOfNodes = arrayOfNodes[0]
                 } 
-                //console.log("Arrayobject after inserting image", arrayOfNodes[0].length);
                 break;
             case "text": 
                 contentHTMLNodes.forEach(function(item) {
@@ -228,7 +223,5 @@ async function findHTMLNodeInString(string, nodeClassName) {
             })
             break;
         }
-        
-        console.log("returned html", arrayOfNodes);
         return arrayOfNodes
     }
