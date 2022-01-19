@@ -59,7 +59,7 @@ function imageReelHTML (fullArticle) {
                                                                 <div>
                                                                                 <img src="${item.source}">
                                                                 </div> 
-                                                                <p>Bilde: ${removeHTMLTags(item.description)}</p>
+                                                                
                                                         </div>`;
                                         counter++;
         })
