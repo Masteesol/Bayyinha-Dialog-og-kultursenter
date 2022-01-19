@@ -59,7 +59,7 @@ function imageReelHTML (fullArticle) {
                                                                 <div>
                                                                                 <img src="${item.source}">
                                                                 </div> 
-                                                                <p>Bilde: ${item.description}</p>
+                                                                <p>Bilde: ${removeHTMLTags(item.description)}</p>
                                                         </div>`;
                                         counter++;
         })
@@ -109,12 +109,11 @@ async function newObject(post) {
         const arrayOfImages = await findHTMLNodeInString(post.content.rendered, "image")
         const fullText = await findHTMLNodeInString(post.content.rendered, "text")
 
-        //console.log("array of images", arrayOfImages);
         const newObject =  {   
             id: String(post.id),
             title: post.title.rendered,
             image: newImage.source,
-            imageDescription: newImage.caption,
+            imageDescription: removeHTMLTags(newImage.caption),
             imageReel: arrayOfImages,
             videos: arrayOfVideos,
             datePublished: reformatDate(post.date),
@@ -171,7 +170,7 @@ async function findHTMLNodeInString(string, nodeClassName) {
                                 const contentHTMLNodes = convertToHTML.childNodes
                                 //console.log("MEDIANODES", contentHTMLNodes);
                                 let heading = item.caption.rendered;
-                                heading = heading.substring(3, heading.length-5)
+                                heading = removeHTMLTags(heading)
                                 
                                 object = {
                                         heading: heading,
@@ -224,4 +223,10 @@ async function findHTMLNodeInString(string, nodeClassName) {
             break;
         }
         return arrayOfNodes
+    }
+
+    function removeHTMLTags(string) {
+        //Removing html tags from a single string like this one <p>example</p>
+        //result: example
+        return string.substring(3, string.length-5)
     }
