@@ -1,104 +1,36 @@
-const nyheter = [
-    {   
-        id: "news3",
-        title: `Videoserie: "Hvordan fungerer arbeidsmarkedet i Norge?"`,
-        image: "images/nyheter/news3_07.01.22/main-image.png",
-        imageDescription: "Fadumo Farah, Muhammed Abdelqadir, Abdibasid Ali",
-        imageReel: [],
-        videos: [{
-            source: "images/nyheter/news3_07.01.22/videos/video1.mp4",
-            description: "Video: Muhammed Abdelqadir snakker om jobbmarkedet i Norge",
-            text: `<h4>Slik fungerer jobbmarkedet i Norge</h4><br><br><p>Mohammed Abdelqadir er topputdannet i Finans fra BI: 
-            "Jeg tok kurs fra NAV, for å bygge min CV og søknad, og ikke minst hvordan man bygger nettverk". 
-             Se intervjuet for å finne ut mer hvilken steg Mohammed har tatt for å lykkes med drømmejobben.<br>
-            <i>Språk: Somali</i></p>`,
-        }, 
-        {
-            source: "images/nyheter/news3_07.01.22/videos/video3.mp4",
-            description: "Video: Fadumo Farah",
-            text: `<h4>Ikke gi opp, vis barna dine at du jobber for dem, du er et forbilde!</h4><br><br>
-            <p>Fadumo Farah jobber som bussjåfør og vi får endelig høre hennes erfaring om arbeidsmarkedet i 
-            Norge og hvilken råd hun ønsker å gi til alle kvinner som ønsker å komme i arbeid.</p>`,
-        },
-        {
-            source: "images/nyheter/news3_07.01.22/videos/video2.mp4",
-            description: "Video: Abdibasid Ali deler med oss sin erfaring, samt råd og tips.",
-            text: ``,
-        }],
-        datePublished: "07.01.22",
-        fullText: `I samarbeid med Norsom TV, har vi produsert tre serier hvor vi har filmet personer 
-        fra forskjellige bakgrunn. Filmene har blitt lagt ut på Facebook og Instagram sidene.`
-    }, 
-    {   
-        id: "news1",
-        title: `Integreringsarbeid i regi av frivillige organisasjoner <br>
-        <strong>– Ett skritt nærmere drømmejobben</strong>`,
-        image: "images/nyheter/news1_29.12.21/news_29.12.21.png",
-        imageDescription: "fra seminaret",
-        imageReel: [
-            {
-                image: "images/nyheter/news1_29.12.21/image_reel/image1.jpg",
-                imageDescription: "Muhammed Abdelqadir snakker om jobbmarkedet i Norge"
-            },
-            {
-                image: "images/nyheter/news1_29.12.21/image_reel/image2.jpg",
-                imageDescription: "Buffet!"
-            }
-        ],
-        videos: [ 
-        ],
-        datePublished: "07.01.22",
-        fullText: `Bayyinah har søkt tilskudd fra Oslo kommune for å 
-        gjennomføre dette prosjektet: øke kunnskap om det norske samfunnet 
-        og styrket kvalifisering for arbeid eller utdanning blant innvandrere. 
-        I samarbeid med Norsom TV, har vi produsert tre serier hvor vi har filmet 
-        personer fra forskjellige bakgrunn. Filmene har blitt lagt ut på Facebook og 
-        Instagram sidene.<br><br> Bayyinah har avsluttet med et seminar som ble holdt den 
-        22.12-21. Vi har invitert foredragsholdere som holdte to innlegg for publikum 
-        om hvordan arbeidsmarkedet i Norge fungerer og hvordan kan man lykkes i det. `
-    },
-    {   
-        id: "news2",
-        title: `Vi har søkt tilskudd til svømming for barnehage barn.`,
-        image: "images/nyheter/news2_28.12.21/news_28.12.21.png",
-        imageDescription: "signert dokument",
-        imageReel: [],
-        videos: [],
-        datePublished: "07.01.22",
-        fullText: `Vi har søkt tilskudd til svømming for barnehage barn og dette har vi fått innvilget. 
-        Dette skal gjennomføres i 2021 fra og med januar. I håp om at alt ting som planlagt og at 
-        dette skal ikke hindre barna i å få opplæring i svømming. Denne støtten har vi fått 
-        sponset av fylkesmann i Oslo og Viken. Mer oppdatering kommer etter gjennomføring av 
-        aktiviteten `,
-    }, 
-];
+const postsURL = "https://www.cmsma1mariussolheim.one/wp-json/wp/v2/posts"
 
 
-/* Template for new entry to array of objects
-    {   
-        id: "",
-        title: ``,
-        image: "images/nyheter/...",
-        imageDescription: "",
-        imageReel: [],
-        videos: [],
-        datePublished: "",
-        fullText: ``
+async function getMainImage(url) {
+    try {
+        const featuredImage = await fetch(url)
+        const JSON = await featuredImage.json();
+        const imageObject = {
+            source: JSON.source_url,
+            caption: JSON.caption.rendered  
+        } 
+        //console.log(imageObject);
+        return imageObject;
+    } catch(error) {
+        console.log(`Error message is: ${error}`);
     }
-    imageReel objects: 
-        {
-        image: "images/nyheter/news1_29.12.21/image_reel/image1.jpg",
-        imageDescription: "Muhammed Abdelqadir snakker om jobbmarkedet i Norge"
-    }
+    
+}
 
+async function arrayFromAPI() {
+    try {
+        const JSON = await getApi(postsURL)
+        let newArray =  JSON.map(function(post) {
+            return newArrayObject(post)
+        }) 
+        return await newArray
+        
+    } catch(error) {
+        console.log(`Error message is: ${error}`);
     }
-    videos objects: 
-        {
-            source: "images/nyheter/news1_29.12.21/videos/video1.mp4",
-            description: "",
-            text: ``,
-        }
-*/ 
+}
+
+
 
 function htmlNewsFeed (articleData) {
     return `<div class="newscard" id=${articleData.id}>
@@ -124,6 +56,19 @@ function htmlNewsDetails(articleData) {
                 </div>`;
 }
 
-function findArticle(id) {
-    return nyheter.filter(item => item.id === id)[0];
+async function findArticle(id) {
+    const newArray = await arrayFromAPI()
+    for await (const item of newArray) {
+        if(item.id === id) {
+            return item;
+        };
+    }
+    //return newArray.filter(item => item.id === id)[0];
+}
+
+function reformatDate(date) {
+    const onlyDate = date.substring(0,10)
+    const newDate = onlyDate.split("-");
+    return newDate[2] +'.' + newDate[1]+ '.' + newDate[0]
+
 }
