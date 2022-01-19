@@ -27,7 +27,10 @@ async function insertHTML () {
         main.innerHTML = htmlNewsDetails(fullArticle);
         if(fullArticle.videos.length > 0) {
                 for await (const item of fullArticle.videos) {
-                        main.innerHTML += `<article class="text-container" id="video-text">${item.text}</article>`;
+                        main.innerHTML += `<article class="text-container" id="video-text">
+                                                <h4>${item.heading}</h4>
+                                                <p>${item.text}</p>
+                                                </article>`;
                         main.innerHTML += createVideoHTML(item)
                 };
             
@@ -154,7 +157,7 @@ async function findHTMLNodeInString(string, nodeClassName) {
                 //console.log("array", array);
                 return array
         }
-        async function findVideoFromWP(urlName) {
+        async function findVideoFromWP(urlName, caption) {
                 const mediaLibrary = await fetch(mediaURL)
                 const JSON = await mediaLibrary.json()
                 console.log("JSON MEDIA",JSON);
@@ -163,15 +166,17 @@ async function findHTMLNodeInString(string, nodeClassName) {
         
                 let object
                 for await (const item of JSON) {
-                      
                         if(item.guid.rendered === urlName) {
-                                console.log("Got this far");
                                 let convertToHTML = document.createElement("div")
                                 convertToHTML.innerHTML = `${item.description.rendered}`;
                                 const contentHTMLNodes = convertToHTML.childNodes
-                                console.log("MEDIANODES", contentHTMLNodes.item(contentHTMLNodes.length-2).firstChild.data);
+                                console.log("MEDIANODES", contentHTMLNodes);
+                                let heading = item.caption.rendered;
+                                heading = heading.substring(3, heading.length-5)
+                                console.log("heading", heading);
                                 object = {
-                                        description: item.caption.rendered,
+                                        heading: heading,
+                                        description: caption,
                                         source: urlName,
                                         text: `<p>${contentHTMLNodes.item(contentHTMLNodes.length-2).firstChild.data}</p>` 
                                 }
@@ -191,8 +196,9 @@ async function findHTMLNodeInString(string, nodeClassName) {
                         console.log("hasVideo");
                         for await (const item of contentHTMLNodes) {
                                 if(item.className && item.className.includes("wp-block-video")) {
-                                       
-                                        const newObject = await findVideoFromWP(item.firstChild.src)
+                                        const url = item.firstChild.src
+                                        const caption = item.innerText;
+                                        const newObject = await findVideoFromWP(url, caption)
                                         console.log("object", newObject);
                                         arrayOfNodes.push(newObject) 
                                 }
