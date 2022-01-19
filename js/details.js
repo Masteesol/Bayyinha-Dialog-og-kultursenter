@@ -125,13 +125,15 @@ async function newObject(post) {
     }
     
 async function findHTMLNodeInString(string, nodeClassName) {
-    
+        
         const typeOfElement = nodeClassName;
         let arrayOfNodes = []
 
+        const newString = string.replaceAll("http:", 'https:')
+
         //console.log("Array of Nodes before", arrayOfNodes);
         let contentHTML = document.createElement("div")
-        contentHTML.innerHTML = `${string}`;
+        contentHTML.innerHTML = `${newString}`;
         const contentHTMLNodes = contentHTML.childNodes
         console.log("content of nodes",contentHTMLNodes);
     
@@ -143,8 +145,6 @@ async function findHTMLNodeInString(string, nodeClassName) {
                 //example "wp-image-110" we want 110 as the id
                 const fullImageObject = await fetch(mediaURL+imageID)
                 const JSON = await fullImageObject.json()
-                const urlModified = item.firstChild.src.replace("http://", "https://")
-                console.log(urlModified);
                 const newObject = {
                         description: JSON.caption.rendered,
                         source: JSON.source_url,
@@ -157,7 +157,7 @@ async function findHTMLNodeInString(string, nodeClassName) {
                 //console.log("array", array);
                 return array
         }
-        async function findVideoFromWP(fileName, caption) {
+        async function findVideoFromWP(urlName, caption) {
                 const mediaLibrary = await fetch(mediaURL)
                 const JSON = await mediaLibrary.json()
                 //console.log("JSON MEDIA",JSON);
@@ -165,9 +165,7 @@ async function findHTMLNodeInString(string, nodeClassName) {
         
                 let object
                 for await (const item of JSON) {
-                        let fileNameJSON = item.source_url.split("/")
-                        fileNameJSON = fileNameJSON[fileNameJSON.length-1]
-                        if(fileNameJSON === fileName) {
+                        if(item.source_url === urlName) {
                                 let convertToHTML = document.createElement("div")
                                 convertToHTML.innerHTML = `${item.description.rendered}`;
                                 const contentHTMLNodes = convertToHTML.childNodes
@@ -197,10 +195,8 @@ async function findHTMLNodeInString(string, nodeClassName) {
                         for await (const item of contentHTMLNodes) {
                                 if(item.className && item.className.includes("wp-block-video")) {
                                         const urlName = item.firstChild.src
-                                        let fileName = urlName.split("/")
-                                        fileName = fileName[fileName.length-1]
                                         const caption = item.innerText;
-                                        const newObject = await findVideoFromWP(fileName, caption)
+                                        const newObject = await findVideoFromWP(urlName, caption)
                                         arrayOfNodes.push(newObject) 
                                 }
                         }
