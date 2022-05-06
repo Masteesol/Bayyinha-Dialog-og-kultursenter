@@ -1,4 +1,4 @@
-const postsURL = "https://www.cmsma1mariussolheim.one/wp-json/wp/v2/posts"
+const postsURL = "https://backend.bayyinah-bdk.one/wp-json/wp/v2/posts"
 
 
 async function getMainImage(url) {

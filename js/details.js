@@ -6,8 +6,8 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id")
 
-const directURL = "https://www.cmsma1mariussolheim.one/wp-json/wp/v2/posts/"
-const mediaURL = "https://www.cmsma1mariussolheim.one/wp-json/wp/v2/media/"
+const directURL = "https://backend.bayyinah-bdk.one/wp-json/wp/v2/posts/"
+const mediaURL = "https://backend.bayyinah-bdk.one/wp-json/wp/v2/media/"
 
 async function objectFromAPI() {
         try {
